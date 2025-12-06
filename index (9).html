@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trần Thị Cẩm Tiên - Thạc sĩ Công nghệ Thực phẩm</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: translateY(-5px);
+        }
+        .section-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s forwards;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .skill-bar {
+            animation: fillBar 2s ease-out;
+        }
+        @keyframes fillBar {
+            from {
+                width: 0;
+            }
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%),
+                        url('https://images.unsplash.com/photo-1490818387583-1baba5e638af?q=80&w=1932') center/cover;
+        }
+        .food-img {
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .food-img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="text-purple-700 font-bold text-xl">TTC</div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-purple-600 transition">Trang chủ</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-purple-600 transition">Giới thiệu</a>
+                    <a href="#education" class="nav-link text-gray-700 hover:text-purple-600 transition">Học vấn</a>
+                    <a href="#skills" class="nav-link text-gray-700 hover:text-purple-600 transition">Kỹ năng</a>
+                    <a href="#research" class="nav-link text-gray-700 hover:text-purple-600 transition">Nghiên cứu</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-purple-600 transition">Liên hệ</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#home" class="block py-2 text-gray-700 hover:text-purple-600">Trang chủ</a>
+                <a href="#about" class="block py-2 text-gray-700 hover:text-purple-600">Giới thiệu</a>
+                <a href="#education" class="block py-2 text-gray-700 hover:text-purple-600">Học vấn</a>
+                <a href="#skills" class="block py-2 text-gray-700 hover:text-purple-600">Kỹ năng</a>
+                <a href="#research" class="block py-2 text-gray-700 hover:text-purple-600">Nghiên cứu</a>
+                <a href="#contact" class="block py-2 text-gray-700 hover:text-purple-600">Liên hệ</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center pt-16">
+        <div class="container mx-auto px-4 py-20">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 text-white mb-10 md:mb-0 section-fade">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Trần Thị Cẩm Tiên</h1>
+                    <h2 class="text-2xl md:text-3xl mb-6">Thạc sĩ Công nghệ Thực phẩm</h2>
+                    <p class="text-lg mb-8 opacity-90">Chuyên gia nghiên cứu và phát triển sản phẩm thực phẩm | Đại học Cần Thơ</p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="bg-white text-purple-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+                            Liên hệ với tôi
+                        </a>
+                        <a href="#research" class="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-700 transition">
+                            Xem nghiên cứu
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 bg-white rounded-full flex items-center justify-center shadow-2xl">
+                            <i class="fas fa-user-graduate text-purple-600 text-8xl md:text-9xl"></i>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-yellow-400 rounded-full p-4 shadow-lg">
+                            <i class="fas fa-flask text-white text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Giới thiệu về tôi</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8 card-shadow">
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                        Xin chào! Tôi là Trần Thị Cẩm Tiên, một nhà nghiên cứu đam mê trong lĩnh vực Công nghệ Thực phẩm. 
+                        Với bằng Thạc sĩ từ Đại học Cần Thơ - một trong những trường đại học hàng đầu về nông nghiệp và thực phẩm tại Việt Nam, 
+                        tôi đã tích lũy được kiến thức sâu rộng về khoa học thực phẩm, dinh dưỡng và công nghệ chế biến.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                        Trong suốt quá trình học tập và nghiên cứu, tôi đặc biệt quan tâm đến việc phát triển các sản phẩm thực phẩm 
+                        an toàn, bổ dưỡng và bền vững. Tôi tin rằng công nghệ thực phẩm không chỉ là về việc tạo ra sản phẩm, 
+                        mà còn là về việc cải thiện chất lượng cuộc sống và sức khỏe cộng đồng.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                        <div class="text-center">
+                            <i class="fas fa-microscope text-purple-600 text-3xl mb-3"></i>
+                            <h3 class="font-semibold text-gray-800">Nghiên cứu</h3>
+                            <p class="text-gray-600 mt-2">Phân tích & phát triển sản phẩm mới</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-leaf text-green-600 text-3xl mb-3"></i>
+                            <h3 class="font-semibold text-gray-800">Bền vững</h3>
+                            <p class="text-gray-600 mt-2">Công nghệ xanh & thân thiện môi trường</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-award text-yellow-500 text-3xl mb-3"></i>
+                            <h3 class="font-semibold text-gray-800">Chất lượng</h3>
+                            <p class="text-gray-600 mt-2">Tiêu chuẩn cao trong mọi dự án</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Học vấn & Chuyên môn</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-purple-200"></div>
+                    
+                    <div class="mb-12 flex items-center">
+                        <div class="w-full md:w-1/2 md:pr-8">
+                            <div class="bg-white rounded-xl p-6 card-shadow hover-scale">
+                                <div class="flex items-center mb-4">
+                                    <i class="fas fa-graduation-cap text-purple-600 text-2xl mr-3"></i>
+                                    <h3 class="text-xl font-bold text-gray-800">Thạc sĩ Công nghệ Thực phẩm</h3>
+                                </div>
+                                <p class="text-gray-600 mb-2">Đại học Cần Thơ</p>
+                                <p class="text-gray-500">2022 - 2024</p>
+                                <ul class="mt-4 space-y-2">
+                                    <li class="text-gray-700"><i class="fas fa-check text-green-500 mr-2"></i>Chuyên ngành: Công nghệ sau thu hoạch</li>
+                                    <li class="text-gray-700"><i class="fas fa-check text-green-500 mr-2"></i>Luận văn: Nghiên cứu bảo quản trái cây nhiệt đới</li>
+                                    <li class="text-gray-700"><i class="fas fa-check text-green-500 mr-2"></i>GPA: 3.8/4.0</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="hidden md:block w-1/2"></div>
+                    </div>
+
+                    <div class="mb-12 flex items-center">
+                        <div class="hidden md:block w-1/2"></div>
+                        <div class="w-full md:w-1/2 md:pl-8">
+                            <div class="bg-white rounded-xl p-6 card-shadow hover-scale">
+                                <div class="flex items-center mb-4">
+                                    <i class="fas fa-university text-purple-600 text-2xl mr-3"></i>
+                                    <h3 class="text-xl font-bold text-gray-800">Kỹ sư Công nghệ Thực phẩm</h3>
+                                </div>
+                                <p class="text-gray-600 mb-2">Đại học Cần Thơ</p>
+                                <p class="text-gray-500">2018 - 2022</p>
+                                <ul class="mt-4 space-y-2">
+                                    <li class="text-gray-700"><i class="fas fa-check text-green-500 mr-2"></i>Tốt nghiệp loại Giỏi</li>
+                                    <li class="text-gray-700"><i class="fas fa-check text-green-500 mr-2"></i>Học bổng xuất sắc 3 năm liên tiếp</li>
+                                    <li class="text-gray-700"><i class="fas fa-check text-green-500 mr-2"></i>Chủ tịch CLB Công nghệ Thực phẩm</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Kỹ năng chuyên môn</h2>
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-semibold text-purple-700 mb-4">Kỹ năng kỹ thuật</h3>
+                    
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700">Phân tích chất lượng thực phẩm</span>
+                            <span class="text-purple-600 font-semibold">95%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-3">
+                            <div class="skill-bar bg-purple-600 h-3 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700">Công nghệ bảo quản & chế biến</span>
+                            <span class="text-purple-600 font-semibold">90%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-3">
+                            <div class="skill-bar bg-purple-600 h-3 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700">Vi sinh vật thực phẩm</span>
+                            <span class="text-purple-600 font-semibold">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-3">
+                            <div class="skill-bar bg-purple-600 h-3 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700">HACCP & ISO 22000</span>
+                            <span class="text-purple-600 font-semibold">88%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-3">
+                            <div class="skill-bar bg-purple-600 h-3 rounded-full" style="width: 88%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-semibold text-purple-700 mb-4">Kỹ năng mềm</h3>
+                    
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700">Nghiên cứu & Phát triển</span>
+                            <span class="text-purple-600 font-semibold">92%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-3">
+                            <div class="skill-bar bg-purple-600 h-3 rounded-full" style="width: 92%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700">Quản lý dự án</span>
+                            <span class="text-purple-600 font-semibold">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-3">
+                            <div class="skill-bar bg-purple-600 h-3 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700">Làm việc nhóm</span>
+                            <span class="text-purple-600 font-semibold">95%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-3">
+                            <div class="skill-bar bg-purple-600 h-3 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700">Thuyết trình</span>
+                            <span class="text-purple-600 font-semibold">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-3">
+                            <div class="skill-bar bg-purple-600 h-3 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Software Skills -->
+            <div class="max-w-5xl mx-auto mt-12">
+                <h3 class="text-2xl font-semibold text-purple-700 mb-6 text-center">Phần mềm & Công cụ</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-gray-50 rounded-lg p-4 text-center hover-scale">
+                        <i class="fas fa-chart-line text-blue-500 text-3xl mb-2"></i>
+                        <p class="text-gray-700">SPSS</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4 text-center hover-scale">
+                        <i class="fas fa-file-excel text-green-600 text-3xl mb-2"></i>
+                        <p class="text-gray-700">MS Excel</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4 text-center hover-scale">
+                        <i class="fas fa-vial text-purple-500 text-3xl mb-2"></i>
+                        <p class="text-gray-700">Lab Equipment</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4 text-center hover-scale">
+                        <i class="fas fa-database text-orange-500 text-3xl mb-2"></i>
+                        <p class="text-gray-700">Food Database</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Nghiên cứu & Dự án</h2>
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-white rounded-xl overflow-hidden card-shadow hover-scale">
+                    <img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?q=80&w=1000" alt="Trái cây nhiệt đới" class="h-48 w-full food-img">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Bảo quản trái cây nhiệt đới</h3>
+                        <p class="text-gray-600 mb-4">Nghiên cứu phương pháp kéo dài thời gian bảo quản trái cây nhiệt đới bằng công nghệ màng sinh học.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">Màng sinh học</span>
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">Chitosan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden card-shadow hover-scale">
+                    <img src="https://images.unsplash.com/photo-1609501676725-7186f017a4b7?q=80&w=1000" alt="Thực phẩm chức năng" class="h-48 w-full food-img">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Phát triển thực phẩm chức năng</h3>
+                        <p class="text-gray-600 mb-4">Dự án phát triển sản phẩm thực phẩm chức năng từ nguyên liệu tự nhiên địa phương.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">Probiotic</span>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">Superfood</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden card-shadow hover-scale">
+                    <div class="h-48 bg-gradient-to-r from-yellow-400 to-orange-500 flex items-center justify-center">
+                        <i class="fas fa-recycle text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Tận dụng phụ phẩm nông nghiệp</h3>
+                        <p class="text-gray-600 mb-4">Chuyển đổi phụ phẩm nông nghiệp thành sản phẩm có giá trị gia tăng cao.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">Zero waste</span>
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">Circular economy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden card-shadow hover-scale">
+                    <div class="h-48 bg-gradient-to-r from-pink-400 to-purple-500 flex items-center justify-center">
+                        <i class="fas fa-bread-slice text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Công nghệ làm bánh hiện đại</h3>
+                        <p class="text-gray-600 mb-4">Ứng dụng enzyme và công nghệ mới trong sản xuất bánh mì và bánh ngọt.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm">Enzyme</span>
+                            <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm">Gluten-free</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden card-shadow hover-scale">
+                    <div class="h-48 bg-gradient-to-r from-indigo-400 to-cyan-500 flex items-center justify-center">
+                        <i class="fas fa-fish text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Chế biến thủy sản</h3>
+                        <p class="text-gray-600 mb-4">Nghiên cứu quy trình chế biến và bảo quản sản phẩm thủy sản xuất khẩu.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">HACCP</span>
+                            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">Export quality</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden card-shadow hover-scale">
+                    <div class="h-48 bg-gradient-to-r from-red-400 to-pink-500 flex items-center justify-center">
+                        <i class="fas fa-microscope text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">An toàn thực phẩm</h3>
+                        <p class="text-gray-600 mb-4">Phát triển hệ thống kiểm soát và đảm bảo an toàn thực phẩm trong sản xuất.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm">ISO 22000</span>
+                            <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm">Food safety</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Liên hệ với tôi</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-purple-700 mb-6">Thông tin liên hệ</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-purple-600 text-xl w-8"></i>
+                                <span class="text-gray-700">camtien.food@gmail.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-purple-600 text-xl w-8"></i>
+                                <span class="text-gray-700">+84 123 456 789</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-purple-600 text-xl w-8"></i>
+                                <span class="text-gray-700">Cần Thơ, Việt Nam</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fab fa-linkedin text-purple-600 text-xl w-8"></i>
+                                <span class="text-gray-700">linkedin.com/in/camtien-tran</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-8">
+                            <h4 class="text-lg font-semibold text-gray-800 mb-4">Kết nối với tôi</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-purple-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-purple-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="bg-purple-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="bg-purple-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-semibold text-purple-700 mb-6">Gửi tin nhắn</h3>
+                        <form id="contact-form" class="space-y-4">
+                            <input type="text" placeholder="Họ và tên" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:outline-none">
+                            <input type="email" placeholder="Email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:outline-none">
+                            <input type="text" placeholder="Chủ đề" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:outline-none">
+                            <textarea placeholder="Nội dung tin nhắn" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:outline-none"></textarea>
+                            <button type="submit" class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition">
+                                Gửi tin nhắn
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-bg py-8 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-2">&copy; 2024 Trần Thị Cẩm Tiên. All rights reserved.</p>
+            <p class="text-sm opacity-75">Thạc sĩ Công nghệ Thực phẩm - Đại học Cần Thơ</p>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-purple-600 text-white w-12 h-12 rounded-full shadow-lg hover:bg-purple-700 transition hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Back to top button
+        const backToTopBtn = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.remove('hidden');
+            } else {
+                backToTopBtn.classList.add('hidden');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Contact form handling
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Cảm ơn bạn đã liên hệ! Tôi sẽ phản hồi sớm nhất có thể.');
+            e.target.reset();
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0.2s';
+                    entry.target.classList.add('section-fade');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Active navigation highlight
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-purple-600', 'font-semibold');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('text-purple-600', 'font-semibold');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
